@@ -1,0 +1,3 @@
+curl -v -X POST http://localhost:8080/token \
+  -u user:asdf \
+  -H "Content-Type: application/json"
