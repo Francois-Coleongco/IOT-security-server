@@ -46,6 +46,7 @@ public class WebSecurityConfig {
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
+		System.out.println("Supposedly called passwordEncoder");
 		return new BCryptPasswordEncoder(12);
 	}
 
@@ -67,7 +68,7 @@ public class WebSecurityConfig {
 
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
-		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider(userDetailsService);
+		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider(this.userDetailsService);
 		authProvider.setPasswordEncoder(passwordEncoder());
 		return authProvider;
 	}

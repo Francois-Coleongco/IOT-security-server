@@ -8,13 +8,13 @@ services:
       POSTGRES_DB: ssdb
     ports:
       - "5432:5432"
-    volumes:
-      - postgres_sec_server_data:/var/lib/postgresql/data
+    # volumes:
+      # - postgres_sec_server_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U sleepy -d ssdb"]
       interval: 5s
       timeout: 5s
       retries: 5
 
-volumes:
-  postgres_sec_server_data:
+# volumes:
+#   postgres_sec_server_data:

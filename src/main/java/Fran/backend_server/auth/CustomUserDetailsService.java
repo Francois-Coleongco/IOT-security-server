@@ -10,6 +10,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 	private final UserRepository userRepository;
 
 	public CustomUserDetailsService(UserRepository userRepository) {
+		System.out.println("constructed CustomUserDetailsService");
 		this.userRepository = userRepository;
 	}
 
@@ -23,6 +24,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		if (username.startsWith("DEVICE-")) {
 			role = "DEVICE"; // login is for an IOT device
 		}
+		System.out.println("username was: " + user.getPassword());
 
 		return org.springframework.security.core.userdetails.User.withUsername(user.getUsername())
 				.password(user.getPassword()).roles(role).build();
