@@ -1,8 +1,9 @@
 # IoT Device Data Platform
 
-A **Java Spring Boot** backend for collecting, storing, and serving telemetry data from distributed IoT devices.  
+A **Java Spring Boot** backend for collecting, storing, and serving telemetry data from distributed IoT devices.
 The system provides **secure REST APIs** for authenticated clients to fetch device data, and uses **PostgreSQL** (running in Docker) for structured time-series storage.
 
+To be used with my [ESP32 Project](https://github.com/Francois-Coleongco/ESP32-PIR-Monitor)
 ---
 
 ## 📌 Features
